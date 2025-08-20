@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+
+}
+body {
+    background-color: #fcf8f8;
+}
+
+header{
+    display: flex;
+    gap: 800px;
+    min-height: 80px;
+    background-color: rgba(248, 112, 33, 0.884);
+}
+
+.logo{
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation{
+    display: flex;
+    gap: 30px;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: auto;
+    float: right;    
+}
+ .navigation a{
+    text-decoration: solid;
+    color: black;
+ }
+
+section {
+    display: flex;
+}
+
+.first-class {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    margin-top: 150px;
+    margin-left: 100px;
+
+}
+
+.intro {
+    font-size: 5em;
+    align-items: end;
+}
+
+.descript {
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.img-main{
+    justify-content: right;
+    flex: 1;
+    float: right;
+ }
+
+button {
+    background-color: rgba(248, 112, 33, 0.884);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.second-heading{
+    
+}
+
+/* section {
+    background-image: url("../assets/hero.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    /* text-align: center;
+    padding-top: 350px; */
+/* }
+main{
+    display: flex;
+    min-height: 100vh;
+    gap: 100px;
+}
+
+.text-div{
+    background-color:rgb(107, 180, 181);
+    height: 400px;
+    width: 500px;
+    padding-top: 5em;
+    margin-left: 100px;
+    margin-top: ;
+}
+
+.image-div{
+    background-color: rgb(200, 59, 106);
+    height: 400px;
+    width: 500px;
+}
+
+.first{
+    margin-top: 20px;
+} */
