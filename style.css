@@ -121,6 +121,9 @@ a.button {
     flex: 1 1 300px;
     max-width: 400px;
     margin: 0 auto;
+    border: rgba(248, 112, 33, 0.884) 5px solid ;
+    border-radius: 50px;
+
 }
 
 .img-main img {
