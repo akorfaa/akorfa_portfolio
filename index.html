@@ -1,126 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/63093b9539.js" crossorigin="anonymous"></script>
-    <title>Akorfa's Portfolio</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akorfa Awudi | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- NAV -->
     <header>
-        <h3 class="logo">Akorfa's Portfolio</h2>
-        <nav class="navigation">
-            <a href="#Home">Home</a>
-            <a href="#About">About</a>
-            <a href="#Skills">Skills</a>
-            <a href="#Project">Projects</a>
-            <a href="#Contacts">Contact</a>
-        </nav>
+      <nav class="navbar sticky-navbar">
+        <div
+          class="logo"
+          style="color: var(--highlight); background: var(--primary)"
+        >
+          AA
+        </div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">&#9776;</div>
+      </nav>
     </header>
-    <main>
-    <section id="Home" class="first-section">
-        <div class = "first-class">
-            <h2 class = "intro">Hi! <br/>I am <span>Akorfa </span> </h1>
-            <p class = "descript">I build clean, modern websites 
-                and creative designs that help 
-                clients and businesses grow. 
-            </p>
-            <a href="#About" class="button">Read more</a>
-            <a href="cv/Akorfa_Awudi_CV.pdf" class="button">Download CV</a>
+
+    <!-- HERO SECTION -->
+    <section class="hero home-margin">
+      <div class="hero-main">
+        <div class="hero-info">
+          <h1 class="hero-title">Akorfa Awudi</h1>
+          <p class="hero-tagline">Empowering Ideas Through Code &amp; Design</p>
+          <a href="#projects" class="btn">See My Work</a>
+          <a href="#contact" class="btn hire-btn">Hire Me</a>
         </div>
-        <div class="img-main">
-            <img src="assets/hero.png" alt="My picture">           
+        <div class="hero-photo">
+          <img src="images/profile.jpg" alt="Akorfa Awudi" />
         </div>
+      </div>
     </section>
-    <section id="About" class = "about-section">
-        <div class="about-div">
-            <h2 class = "second-heading">About Me</h2>
-            <p class="second-paragraph">I am a Web Developer with a love 
-                for creating clean, functional, and visually engaging websites. 
-                I believe great design isn’t just about looks — 
-                it is about building experiences that are simple, creative, and impactful.</p>
-            <p class="second-paragraph">
-                Over the years, I have honed my skills in HTML, CSS, JavaScript, React, and UI/UX design, working on projects 
-                that range from personal portfolios to business websites. My goal is always the same: 
-                to help clients bring their ideas to life and achieve growth through thoughtful web solutions.
-            </p>
-            <p class="second-paragraph">
-                When I am not coding or designing, you will likely find me exploring new tech trends, 
-                sketching ideas, or enjoying a good book with coffee.sketching ideas, or enjoying a good book with coffee.
-            </p>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+      <h2>About Me</h2>
+      <ul class="about-list">
+        <li>Passionate developer and creative problem solver</li>
+        <li>Background in Actuarial Science and web development</li>
+        <li>Skilled in HTML, CSS, JavaScript, Python, and FastAPI</li>
+        <li>Enjoys collaborating on innovative projects</li>
+        <li>Committed to continuous learning and personal growth</li>
+        <li>Interests: creative writing, exploring cultures, sustainability</li>
+      </ul>
+      <div class="cv-download-group">
+        <button
+          class="btn cv-dropdown-btn"
+          onclick="document.getElementById('cv-dropdown').classList.toggle('show')"
+        >
+          Download CV ▼
+        </button>
+        <div id="cv-dropdown" class="cv-dropdown-menu">
+          <a href="cv/Akorfa_Awudi_CV.pdf" download>PDF</a>
+          <a href="cv/Akorfa_Awudi_CV.docx" download>Word</a>
         </div>
+      </div>
+      <script>
+        // Close dropdown if clicked outside
+        document.addEventListener("click", function (e) {
+          var dropdown = document.getElementById("cv-dropdown");
+          var btn = document.querySelector(".cv-dropdown-btn");
+          if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.classList.remove("show");
+          }
+        });
+      </script>
     </section>
-    <section class="skills-section" id="Skills">
-        <div>
-        <h2 class="second-heading">Skills</h2>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills-section">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <ul>
+            <li><span class="skill-icon html-icon"></span> HTML</li>
+            <li><span class="skill-icon css-icon"></span> CSS</li>
+            <li><span class="skill-icon js-icon"></span> JavaScript</li>
+          </ul>
         </div>
-        <div class="skills-box">
-        <div class="skills">
-            <i class="fa-brands fa-html5"></i>
-            <p>HTML</p>
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <ul>
+            <li><span class="skill-icon python-icon"></span> Python</li>
+            <li><span class="skill-icon fastapi-icon"></span> FastAPI</li>
+          </ul>
         </div>
-        
-        <div class="skills">
-            <i class="fa-brands fa-css"></i>
-            <p>CSS</p>
-        </div>
-        <div class="skills">
-            <i class="fa-brands fa-node-js"></i>
-            <p>JavaScript</p>
-        </div>
-        <div class="skills">
-            <i class="fa-brands fa-react"></i>
-            <p>React</p>
-        </div>
-        <div class="skills">
-            <i class="fa-brands fa-python"></i>
-            <p>Python</p>
-        </div>
-        </div>
+      </div>
     </section>
-    <section id="Project" class="project-section">
-        <div>
-        <h2 class="second-heading">Projects</h2>
+
+    <!-- PROJECTS GRID -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <span class="project-icon"></span>
+          <a
+            href="https://github.com/akorfaawudi/recipe-finder"
+            target="_blank"
+          >
+            <img src="images/recipe-finder.jpg" alt="Recipe Finder Project" />
+          </a>
+          <div class="project-tech">
+            <span class="skill-icon python-icon" title="Python"></span>
+            <span class="skill-icon fastapi-icon" title="FastAPI"></span>
+            <span class="skill-icon mongodb-icon" title="MongoDB"></span>
+          </div>
+          <a
+            href="https://github.com/akorfaawudi/recipe-finder"
+            target="_blank"
+            class="demo-btn"
+          >
+            Recipe Finder
+          </a>
         </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-img">
-                    <i class="fa-solid fa-laptop-code"></i>
-                </div>
-                <h3>Portfolio Website</h3>
-                <p>A modern, responsive personal portfolio built with HTML, CSS, and JavaScript.</p>
-                <a href="#" class="button">View Demo</a>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <i class="fa-solid fa-store"></i>
-                </div>
-                <h3>Business Landing Page</h3>
-                <p>Clean and creative landing page for small businesses, focused on conversions.</p>
-                <a href="#" class="button">View Demo</a>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <i class="fa-solid fa-mobile-alt"></i>
-                </div>
-                <h3>Mobile App UI</h3>
-                <p>Beautiful mobile app interface design, optimized for user experience.</p>
-                <a href="#" class="button">View Demo</a>
-            </div>
+
+        <div class="project-card">
+          <span class="project-icon"></span>
+          <a
+            href="https://github.com/akorfaawudi/ecommerce-api"
+            target="_blank"
+          >
+            <img src="images/ecommerce-api.jpg" alt="E-commerce API Project" />
+          </a>
+          <div class="project-tech">
+            <span class="skill-icon python-icon" title="Python"></span>
+            <span class="skill-icon fastapi-icon" title="FastAPI"></span>
+            <span class="skill-icon postgresql-icon" title="PostgreSQL"></span>
+            <span class="skill-icon mongodb-icon" title="MongoDB"></span>
+          </div>
+          <a
+            href="https://github.com/akorfaawudi/ecommerce-api"
+            target="_blank"
+            class="demo-btn"
+          >
+            E-commerce API
+          </a>
         </div>
+
+        <div class="project-card">
+          <span class="project-icon"></span>
+          <a href="https://advertisement-manager.onrender.com/" target="_blank">
+            <img
+              src="images/advertisement-api.jpg"
+              alt="Advertisement API Project"
+            />
+          </a>
+          <div class="project-tech">
+            <span class="skill-icon python-icon" title="Python"></span>
+            <span class="skill-icon fastapi-icon" title="FastAPI"></span>
+            <span class="skill-icon postgresql-icon" title="PostgreSQL"></span>
+            <span class="skill-icon mongodb-icon" title="MongoDB"></span>
+          </div>
+          <a
+            href="https://advertisement-manager.onrender.com/"
+            target="_blank"
+            class="demo-btn"
+          >
+            Advertisement API
+          </a>
+        </div>
+
+        <div class="project-card">
+          <span class="project-icon"></span>
+          <a href="https://github.com/akorfaa/akorfa_portfolio" target="_blank">
+            <img src="images/portfolio.jpg" alt="Portfolio Website Project" />
+          </a>
+          <div class="project-tech">
+            <span class="skill-icon html-icon" title="HTML"></span>
+            <span class="skill-icon css-icon" title="CSS"></span>
+            <span class="skill-icon js-icon" title="JavaScript"></span>
+          </div>
+          <a
+            href="https://github.com/akorfaa/akorfa_portfolio"
+            target="_blank"
+            class="demo-btn"
+          >
+            Portfolio Website
+          </a>
+        </div>
+      </div>
     </section>
-    <section class="contact-section" id="Contacts">
-        <h2 class="second-heading">Contact Me</h2>
-        <div>
-            <p class="contact-info">E-mail: <span>akorfaawudi28@gmail.com</span></p>
-            <br/>
-            <p class="contact-info">Phone number: <span>+233549969738</span></p>
-            <br/>
-            <p>Location: Accra - Ghana</p>
-        </div>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+      <div class="contact-card">
+        <h2>Contact Me</h2>
+        <p class="contact-invite">
+          Let’s work together! I usually respond within 24 hours.
+        </p>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Email</button>
+        </form>
+      </div>
     </section>
-    </main>
+
+    <!-- FOOTER -->
     <footer>
-        <p>2025| Akorfa Awudi | All Rights Reserved</p>
+      <div class="footer-content">
+        <div class="footer-socials">
+          <a
+            href="mailto:akorfaawudi28@gmail.com"
+            target="_blank"
+            class="footer-icon email-icon"
+            aria-label="Email"
+          ></a>
+          <a
+            href="https://github.com/akorfaa/"
+            target="_blank"
+            class="footer-icon github-icon"
+            aria-label="GitHub"
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/akorfa/"
+            target="_blank"
+            class="footer-icon linkedin-icon"
+            aria-label="LinkedIn"
+          ></a>
+          <a
+            href="https://wa.me/233549969738"
+            target="_blank"
+            class="footer-icon whatsapp-icon"
+            aria-label="WhatsApp"
+          ></a>
+        </div>
+        <a
+          href="#"
+          class="footer-backtotop"
+          onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"
+          >Back to Top ↑</a
+        >
+        <p>© 2025 Akorfa Awudi. All rights reserved.</p>
+      </div>
     </footer>
+    <div
+      id="email-notification"
+      style="
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--accent);
+        color: var(--white);
+        padding: 2rem 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(62, 39, 35, 0.18);
+        font-weight: 600;
+        font-size: 1.15rem;
+        z-index: 9999;
+        text-align: center;
+      "
+    >
+      Thank you for your message. I will respond as soon as possible.
+    </div>
+    <script>
+      document
+        .querySelector(".contact-form")
+        ?.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
+          window.location.href = `mailto:akorfaawudi28@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(
+            name
+          )}&body=${encodeURIComponent(
+            message
+          )}%0A%0AFrom: ${encodeURIComponent(email)}`;
+          setTimeout(function () {
+            document.getElementById("email-notification").style.display =
+              "block";
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+            setTimeout(function () {
+              document.getElementById("email-notification").style.display =
+                "none";
+            }, 3500);
+          }, 5000);
+        });
+    </script>
+    <!-- JavaScript to highlight active nav link on scroll -->
+    <script>
+      window.addEventListener("scroll", function () {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-links a");
+        let currentSection = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 80;
+          if (window.scrollY >= sectionTop) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href").slice(1) === currentSection) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+      // Close mobile menu after clicking a link
+      const navLinks = document.querySelectorAll(".nav-links a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          const navMenu = document.querySelector(".nav-links");
+          if (navMenu.classList.contains("active")) {
+            navMenu.classList.remove("active");
+          }
+        });
+      });
+
+      // Close mobile menu after clicking anywhere on the page (outside menu)
+      document.addEventListener("click", function (e) {
+        const navMenu = document.querySelector(".nav-links");
+        const menuToggle = document.querySelector(".menu-toggle");
+        if (
+          navMenu.classList.contains("active") &&
+          !navMenu.contains(e.target) &&
+          !menuToggle.contains(e.target)
+        ) {
+          navMenu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
